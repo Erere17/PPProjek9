@@ -15,28 +15,25 @@ jarak terhadap gangguan aliran sesuai standar metode 1 isokinetik.
 
 # Sidebar for input
 with st.sidebar:
-st.header(&quot;Input Parameter&quot;)
-diameter = st.number_input(&quot;Diameter Cerobong (m)&quot;, min_value=0.1, step=0.01)
-panjang_nipple = st.number_input(&quot;Panjang Nipple (m)&quot;, min_value=0.0, step=0.1)
-upstream = st.number_input(&quot;Jarak Upstream dari Gangguan (m)&quot;, min_value=0.0,
-step=0.1)
-downstream = st.number_input(&quot;Jarak Downstream dari Gangguan (m)&quot;,
-min_value=0.0, step=0.1)
+  st.header(&quot;Input Parameter&quot;)
+  diameter = st.number_input("Diameter Cerobong (m)", min_value=0.1, step=0.01)
+  panjang_nipple = st.number_input(&quot;Panjang Nipple (m)&quot;, min_value=0.0, step=0.1)
+  upstream = st.number_input(&quot;Jarak Upstream dari Gangguan (m)&quot;, min_value=0.0, step=0.1)
+  downstream = st.number_input(&quot;Jarak Downstream dari Gangguan (m)&quot;, min_value=0.0, step=0.1)
 
 # Divider
 st.markdown(&quot;---&quot;)
 
 # Fungsi menentukan jumlah titik lintas
 def tentukan_jumlah_titik(diameter, upstream, downstream):
-if diameter &gt;= 0.61:
-if upstream &gt;= 8 * diameter and downstream &gt;= 2 * diameter:
-return 12
-elif upstream &gt;= 4 * diameter and downstream &gt;= 1 * diameter:
-return 10
+  if diameter &gt;= 0.61:
+    if upstream &gt;= 8 * diameter and downstream &gt;= 2 * diameter:
+    return 12
+  elif upstream &gt;= 4 * diameter and downstream &gt;= 1 * diameter:
+  return 10
 else:
 return 8
-elif 0.3 &lt;= diameter &lt; 0.61:
-
+elif: 0.3 &lt;= diameter &lt; 0.61:
 return 8
 else:
 return 6
@@ -52,14 +49,12 @@ st.write(f&quot;Jumlah titik lintas (otomatis): **{jumlah_titik} titik**&quot;)
 
 hasil = []
 for i in range(1, jumlah_titik + 1):
-posisi = radius * math.sqrt((i - 0.5) / jumlah_titik)
-jarak_dari_tepi = round(radius - posisi, 3)
-hasil.append(jarak_dari_tepi)
-st.write(f&quot;Titik {i}: {jarak_dari_tepi} m dari tepi cerobong&quot;)
-
-# Tabel hasil
-st.subheader(&quot; Tabel Titik Sampling&quot;)
-st.table({f&quot;Titik {i+1}&quot;: [f&quot;{hasil[i]} m&quot;] for i in range(len(hasil))})
+  posisi = radius * math.sqrt((i - 0.5) / jumlah_titik)
+  jarak_dari_tepi = round(radius - posisi, 3)
+  hasil.append(jarak_dari_tepi)
+  st.write(f&quot;Titik {i}: {jarak_dari_tepi} m dari tepi cerobong&quot;)
+  st.subheader(&quot; Tabel Titik Sampling&quot;)
+  st.table({f&quot;Titik {i+1}&quot;: [f&quot;{hasil[i]} m&quot;] for i in range(len(hasil))})
 
 st.success(&quot;Perhitungan titik sampling selesai.&quot;)
 else:

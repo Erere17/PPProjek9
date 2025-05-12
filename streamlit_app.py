@@ -30,7 +30,7 @@ st.markdown(&quot;---&quot;)
 if st.button(&quot;Hitung Titik Sampling&quot;):
 if diameter and jumlah_titik:
 radius = diameter / 2
-st.subheader(&quot;�� Titik Sampling yang Direkomendasikan&quot;)
+st.subheader(&quot; Titik Sampling yang Direkomendasikan&quot;)
 st.write(f&quot;Diameter cerobong: **{diameter} m**&quot;)
 st.write(f&quot;Jumlah titik lintas: **{jumlah_titik} titik**&quot;)
 
@@ -44,11 +44,11 @@ st.write(f&quot;Titik {i}: {jarak_dari_tepi} m dari tepi cerobong&quot;)
 st.success(&quot;Perhitungan selesai.&quot;)
 
 # Optional: Tampilkan tabel
-st.subheader(&quot;�� Tabel Titik Sampling&quot;)
+st.subheader(&quot; Tabel Titik Sampling&quot;)
 st.table({f&quot;Titik {i+1}&quot;: [f&quot;{hasil[i]} m&quot;] for i in range(len(hasil))})
 else:
 st.error(&quot;Masukkan diameter dan jumlah titik yang valid.&quot;)
 
 st.markdown(&quot;---&quot;)
-st.caption(&quot;�� Dibuat dengan Streamlit untuk simulasi edukatif metode samplin
+st.caption(&quot; Dibuat dengan Streamlit untuk simulasi edukatif metode samplin
 isokinetik.&quot;)

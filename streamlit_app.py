@@ -5,7 +5,7 @@ st.set_page_config(page_title=&quot;Metode 1 Isokinetik Pada Emisi Tidak Bergera
 layout=&quot;centered&quot;)
 
 # Title
-st.title(&quot;�� Kalkulator Titik Sampling Pada Emisi Tidak Bergerak ��&quot;)
+st.title(&quot; Kalkulator Titik Sampling Pada Emisi Tidak Bergerak &quot;)
 st.header(&quot;:blue[Metode 1 - Isokinetik Sampling]&quot;)
 
 # Description
